@@ -30,7 +30,7 @@ def match_ends(words):
     for item in words:
         if len(item) >= 2:
             return(len(item))
-    item += 1
+    item += 2
 
 
 # B. front_x
