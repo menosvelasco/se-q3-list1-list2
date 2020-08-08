@@ -27,8 +27,10 @@ __author__ = "???"
 
 
 def match_ends(words):
-    # your code here
-    return
+    for item in words:
+        if len(item) >= 2:
+            return(len(item))
+    item += 1
 
 
 # B. front_x
@@ -43,7 +45,7 @@ def match_ends(words):
 
 
 def front_x(words):
-    # your code here
+    # words.sorted('x')
     return
 
 
