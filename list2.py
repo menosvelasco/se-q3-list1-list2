@@ -28,8 +28,15 @@ __author__ = "???"
 
 
 def remove_adjacent(nums):
-    # your code here
-    return
+    zero = 0
+    while zero < len(nums):
+        if nums[zero] == nums[zero-1]:
+            nums.pop(zero)
+            zero -= 1
+        else:
+            zero += 1
+            # print(nums)
+    return nums
 
 
 # E. zip_merge
@@ -43,33 +50,44 @@ def remove_adjacent(nums):
 
 
 def zip_merge(list1, list2):
-    # your code here
-    return
+    kelly = list(zip(list1, list2))
+    sent = []
+    for item in kelly:
+        sent.append(''.join(item))
+    return sent
 
-
-# F. empty_filter
-# Given a single list containing strings, empty strings, and
-# None values:  Return a new list with the same elements, but
-# strip out (filter) the empty strings and None values away.
-# example: list1 = ["Mike", "", "Emma", None, "Kelly", "", "Brad", None]
-# result:  ["Mike", "Emma", "Kelly", "Brad"]
-# Hint: There is a Python idiom for doing this.  Can you find it?
+    # F. empty_filter
+    # Given a single list containing strings, empty strings, and
+    # None values:  Return a new list with the same elements, but
+    # strip out (filter) the empty strings and None values away.
+    # example: list1 = ["Mike", "", "Emma", None, "Kelly", "", "Brad", None]
+    # result:  ["Mike", "Emma", "Kelly", "Brad"]
+    # Hint: There is a Python idiom for doing this.  Can you find it?
 
 
 def empty_filter(list1):
-    # your code here
-    return
+    empty_list = []
+    for item in list(list1):
+
+        return item
+
+        # return empty_list.append(''.join(item))
 
 
-# G. linear_merge
-# Given two lists sorted in increasing order, create and
-# return a merged list of all the elements in sorted order.
-# You may modify the passed in lists.
-# The solution should work in "linear" time, making a single
-# pass of both lists.
-# Hint: Don't use `sort` or `sorted` -- they are not O(n)
-# linear time and the two lists are already provided in
-# ascending sorted order.
+#
+#
+
+#
+
+        # G. linear_merge
+        # Given two lists sorted in increasing order, create and
+        # return a merged list of all the elements in sorted order.
+        # You may modify the passed in lists.
+        # The solution should work in "linear" time, making a single
+        # pass of both lists.
+        # Hint: Don't use `sort` or `sorted` -- they are not O(n)
+        # linear time and the two lists are already provided in
+        # ascending sorted order.
 
 
 def linear_merge(list1, list2):
