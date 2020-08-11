@@ -25,18 +25,20 @@ __author__ = "???"
 #   [1, 2, 2, 3] -> [1, 2, 3]
 # You may create a new list or modify the passed in list.
 # Hint: Don't use set()
+from operator import is_not
+from functools import partial
 
 
-def remove_adjacent(nums):
+def remove_adjacent(num):
     zero = 0
-    while zero < len(nums):
-        if nums[zero] == nums[zero-1]:
-            nums.pop(zero)
+    while zero < len(num):
+        if num[zero] == num[zero-1]:
+            num.pop(zero)
             zero -= 1
         else:
             zero += 1
-            # print(nums)
-    return nums
+            # print(num)
+    return num
 
 
 # E. zip_merge
@@ -66,37 +68,33 @@ def zip_merge(list1, list2):
 
 
 def empty_filter(list1):
-    empty_list = []
-    for item in list(list1):
+    # none_list = list(filter(partial(is_not, None), list1))
+    # return list(filter(partial(is_not, ""), none_list))
+    return list(filter(lambda x: x is not None and x is not "", list1))
 
-        return item
+    #
+    #
 
-        # return empty_list.append(''.join(item))
+    #
 
-
-#
-#
-
-#
-
-        # G. linear_merge
-        # Given two lists sorted in increasing order, create and
-        # return a merged list of all the elements in sorted order.
-        # You may modify the passed in lists.
-        # The solution should work in "linear" time, making a single
-        # pass of both lists.
-        # Hint: Don't use `sort` or `sorted` -- they are not O(n)
-        # linear time and the two lists are already provided in
-        # ascending sorted order.
+    # G. linear_merge
+    # Given two lists sorted in increasing order, create and
+    # return a merged list of all the elements in sorted order.
+    # You may modify the passed in lists.
+    # The solution should work in "linear" time, making a single
+    # pass of both lists.
+    # Hint: Don't use `sort` or `sorted` -- they are not O(n)
+    # linear time and the two lists are already provided in
+    # ascending sorted order.
 
 
 def linear_merge(list1, list2):
-    # your code here
     return
 
+    # Provided simple test() function used in main() to print
+    # what each function returns vs. what it's supposed to return.
 
-# Provided simple test() function used in main() to print
-# what each function returns vs. what it's supposed to return.
+
 def test(got, expected):
     if got == expected:
         prefix = ' OK '
