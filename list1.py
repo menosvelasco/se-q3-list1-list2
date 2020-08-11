@@ -45,8 +45,16 @@ def match_ends(words):
 
 
 def front_x(words):
-    # words.sorted('x')
-    return
+    x_list = []
+    not_xlist = []
+
+    for i in words:
+        if i[0] in 'x':
+            x_list.append(i)
+        else:
+            not_xlist.append(i)
+    sort_list = sorted(x_list) + sorted(not_xlist)
+    return sort_list
 
 
 # C. sort_last
@@ -59,9 +67,7 @@ def front_x(words):
 
 
 def sort_last(tuples):
-
-    new_list = tuples[::-1]
-    return new_list
+    return sorted(tuples, key=lambda each: each[-1])
 
 
 # Provided simple test() function used in main() to print
