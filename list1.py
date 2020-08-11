@@ -5,7 +5,7 @@ Kenzie assignment: List1
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "???"
+__author__ = "https://stackoverflow.com/questions/13001226/python-program-with-match-ends"
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -25,12 +25,12 @@ __author__ = "???"
 # and last chars of the string are the same.
 # Note: python does not have a ++ operator, but += works.
 
-
 def match_ends(words):
+    index_count = 0
     for item in words:
-        if len(item) >= 2:
-            return(len(item))
-    item += 2
+        if len(item) >= 2 and item[0] == item[-1]:
+            index_count += 1
+    return index_count
 
 
 # B. front_x
@@ -59,8 +59,9 @@ def front_x(words):
 
 
 def sort_last(tuples):
-    # your code here
-    return
+
+    new_list = tuples[::-1]
+    return new_list
 
 
 # Provided simple test() function used in main() to print
