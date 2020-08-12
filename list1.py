@@ -46,14 +46,14 @@ def match_ends(words):
 
 def front_x(words):
     x_list = []
-    not_xlist = []
+    not_x_list = []
 
     for i in words:
         if i[0] in 'x':
             x_list.append(i)
         else:
-            not_xlist.append(i)
-    sort_list = sorted(x_list) + sorted(not_xlist)
+            not_x_list.append(i)
+    sort_list = sorted(x_list) + sorted(not_x_list)
     return sort_list
 
 
