@@ -5,7 +5,9 @@ Kenzie assignment: List2
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "???"
+__author__ = "https://stackoverflow.com/questions/7237875/linear-merging-for-lists-in-python"
+"https://stackoverflow.com/questions/16096754/remove-none-value-from-a-list-without-removing-the-0-value"
+"Amanda help with remove_adjacent and zip_merge"
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -25,8 +27,6 @@ __author__ = "???"
 #   [1, 2, 2, 3] -> [1, 2, 3]
 # You may create a new list or modify the passed in list.
 # Hint: Don't use set()
-from operator import is_not
-from functools import partial
 
 
 def remove_adjacent(num):
@@ -89,7 +89,10 @@ def empty_filter(list1):
 
 
 def linear_merge(list1, list2):
-    return
+    list1.extend(list2)
+    print(sorted(list1))
+
+    return sorted(list1)
 
     # Provided simple test() function used in main() to print
     # what each function returns vs. what it's supposed to return.
