@@ -5,9 +5,14 @@ Kenzie assignment: List2
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "https://stackoverflow.com/questions/7237875/linear-merging-for-lists-in-python"
-"https://stackoverflow.com/questions/16096754/remove-none-value-from-a-list-without-removing-the-0-value"
-"Amanda help with remove_adjacent and zip_merge"
+__author__ = (
+    """
+    manuel Velasco
+    "https://stackoverflow.com/questions/7237875/linear-merging-for-lists-in-python"
+    "https://stackoverflow.com/questions/16096754/remove-none-value-from-a-list-without-removing-the-0-value"
+    Amanda help with remove_adjacent and zip_merge
+    """
+)
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -70,8 +75,8 @@ def zip_merge(list1, list2):
 def empty_filter(list1):
     # none_list = list(filter(partial(is_not, None), list1))
     # return list(filter(partial(is_not, ""), none_list))
-    return list(filter(lambda x: x is not None and x is not "", list1))
-
+    # return list(filter(lambda x: x is not "" and x is not None, list1))
+    return list(filter(None and ''.__ne__, list1))
     #
     #
 
