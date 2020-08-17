@@ -5,7 +5,13 @@ Kenzie assignment: List1
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "???"
+__author__ = (
+    """
+    Manuel Velasco
+    https://stackoverflow.com/questions/13001226/python-program-with-match-ends
+    Amanda work with me on sort_last
+    """
+)
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -18,16 +24,19 @@ __author__ = "???"
 # The starter code for each function includes a bare 'return' which is just a
 # placeholder for your code.
 
+
 # A. match_ends
 # Given a list of strings, return the count of the number of
 # strings where the string length is 2 or more and the first
 # and last chars of the string are the same.
 # Note: python does not have a ++ operator, but += works.
 
-
 def match_ends(words):
-    # your code here
-    return
+    index_count = 0
+    for item in words:
+        if len(item) >= 2 and item[0] == item[-1]:
+            index_count += 1
+    return index_count
 
 
 # B. front_x
@@ -42,8 +51,16 @@ def match_ends(words):
 
 
 def front_x(words):
-    # your code here
-    return
+    x_list = []
+    not_x_list = []
+
+    for i in words:
+        if i[0] in 'x':
+            x_list.append(i)
+        else:
+            not_x_list.append(i)
+    sort_list = sorted(x_list) + sorted(not_x_list)
+    return sort_list
 
 
 # C. sort_last
@@ -56,8 +73,7 @@ def front_x(words):
 
 
 def sort_last(tuples):
-    # your code here
-    return
+    return sorted(tuples, key=lambda each: each[-1])
 
 
 # Provided simple test() function used in main() to print

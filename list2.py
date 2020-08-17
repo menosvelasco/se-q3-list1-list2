@@ -5,7 +5,14 @@ Kenzie assignment: List2
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "???"
+__author__ = (
+    """
+    manuel Velasco
+    "https://stackoverflow.com/questions/7237875/linear-merging-for-lists-in-python"
+    "https://stackoverflow.com/questions/16096754/remove-none-value-from-a-list-without-removing-the-0-value"
+    Amanda help with remove_adjacent and zip_merge
+    """
+)
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -27,9 +34,16 @@ __author__ = "???"
 # Hint: Don't use set()
 
 
-def remove_adjacent(nums):
-    # your code here
-    return
+def remove_adjacent(num):
+    zero = 0
+    while zero < len(num):
+        if num[zero] == num[zero-1]:
+            num.pop(zero)
+            zero -= 1
+        else:
+            zero += 1
+            # print(num)
+    return num
 
 
 # E. zip_merge
@@ -43,42 +57,52 @@ def remove_adjacent(nums):
 
 
 def zip_merge(list1, list2):
-    # your code here
-    return
+    kelly = list(zip(list1, list2))
+    sent = []
+    for item in kelly:
+        sent.append(''.join(item))
+    return sent
 
-
-# F. empty_filter
-# Given a single list containing strings, empty strings, and
-# None values:  Return a new list with the same elements, but
-# strip out (filter) the empty strings and None values away.
-# example: list1 = ["Mike", "", "Emma", None, "Kelly", "", "Brad", None]
-# result:  ["Mike", "Emma", "Kelly", "Brad"]
-# Hint: There is a Python idiom for doing this.  Can you find it?
+    # F. empty_filter
+    # Given a single list containing strings, empty strings, and
+    # None values:  Return a new list with the same elements, but
+    # strip out (filter) the empty strings and None values away.
+    # example: list1 = ["Mike", "", "Emma", None, "Kelly", "", "Brad", None]
+    # result:  ["Mike", "Emma", "Kelly", "Brad"]
+    # Hint: There is a Python idiom for doing this.  Can you find it?
 
 
 def empty_filter(list1):
-    # your code here
-    return
+    # none_list = list(filter(partial(is_not, None), list1))
+    # return list(filter(partial(is_not, ""), none_list))
+    # return list(filter(lambda x: x is not "" and x is not None, list1))
+    return list(filter(None and ''.__ne__, list1))
+    #
+    #
 
+    #
 
-# G. linear_merge
-# Given two lists sorted in increasing order, create and
-# return a merged list of all the elements in sorted order.
-# You may modify the passed in lists.
-# The solution should work in "linear" time, making a single
-# pass of both lists.
-# Hint: Don't use `sort` or `sorted` -- they are not O(n)
-# linear time and the two lists are already provided in
-# ascending sorted order.
+    # G. linear_merge
+    # Given two lists sorted in increasing order, create and
+    # return a merged list of all the elements in sorted order.
+    # You may modify the passed in lists.
+    # The solution should work in "linear" time, making a single
+    # pass of both lists.
+    # Hint: Don't use `sort` or `sorted` -- they are not O(n)
+    # linear time and the two lists are already provided in
+    # ascending sorted order.
 
 
 def linear_merge(list1, list2):
-    # your code here
-    return
+    list1.extend(list2)
+    print(sorted(list1))
+
+    return sorted(list1)
+
+    # Provided simple test() function used in main() to print
+    # what each function returns vs. what it's supposed to return.
 
 
-# Provided simple test() function used in main() to print
-# what each function returns vs. what it's supposed to return.
 def test(got, expected):
     if got == expected:
         prefix = ' OK '
